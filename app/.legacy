@@ -1,0 +1,26 @@
+            /*
+            var socket = io();
+            socket.on('tweet', function(tweet){
+                $('body').append('<p>'+tweet+'</p>');
+            });            
+
+            if(navigator && 'function' === typeof navigator.requestMIDIAccess) {
+                navigator.requestMIDIAccess()
+                    .then(function(access) {
+                        // Get lists of available MIDI controllers
+                        const inputs = access.inputs.values();
+                        const outputs = access.outputs.values();
+                        console.log(inputs);
+                        access.onstatechange = function(e) {
+
+                        // Print information about the (dis)connected MIDI controller
+                        console.log(e.port.name, e.port.manufacturer, e.port.state);
+                    };
+                });
+                console.log('MIDI supported.')
+            } else {
+                alert('No Web MIDI support!');
+                throw 'No Web MIDI support!';
+            }
+
+            */

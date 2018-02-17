@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Voices of The Crowd</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <div id="synth">
+            <ul class="sliders">
+                <li class="slider">
+                    <input type="range" name="um" id="um" min=0 max=1 step="0.001">
+                </li>
+                <li class="slider">
+                    <input type="range" name="dois" id="dois" min=0 max=1 step="0.001">
+                </li>
+        
+                <li class="slider">
+                    <input type="range" name="tres" id="tres" min=0 max=1 step="0.001">
+                </li>
+                <li class="slider">
+                    <input type="range" name="quatro" id="quatro" min=0 max=1 step="0.001">
+                </li>
+                <li class="slider">
+                    <input type="range" name="cinco" id="cinco" min=0 max=1 step="0.001">
+                </li>
+                <li class="slider">
+                    <input type="range" name="seis" id="seis" min=0 max=1 step="0.001">
+                </li>
+                <li class="slider">
+                    <input type="range" name="sete" id="sete" min=0 max=1 step="0.001">
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="sound_processing.js"></script>
+    <script>
+        $(function(){
+
+            var valoresDial = function(slider){
+                console.log($(slider).children('input[type=range]').val());
+            }
+
+            $('li.slider').on('input', function(){
+                valoresDial(this);
+            });
+    
+        });        
+    </script>
+</body>
+</html>

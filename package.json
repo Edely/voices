@@ -1,0 +1,16 @@
+{
+    "name": "voices-of-twitter",
+    "version": "0.0.1",
+    "description": "hearing the conversations of twitter",
+    "dependencies": {
+        "express": "^4.15.2",
+        "gulp": "^3.9.1",
+        "jquery": "^3.3.1",
+        "midi": "^0.9.5",
+        "socket.io": "^2.0.4",
+        "twitter": "^1.7.1"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.23.6"
+    }
+}
