@@ -12,13 +12,14 @@
     <main>
         <div id="synth">
             <ul class="sliders">
-                <li class="slider">
-                    <input type="range" name="um" id="um" min=0 max=1 step="0.001">
+                <li class="slider" id="um">
+                    <input type="range" classe='um' name="um" id="vol-um" min=0 max=1 step="0.001">
                 </li>
                 <li class="slider">
                     <input type="range" name="dois" id="dois" min=0 max=1 step="0.001">
                 </li>
         
+               <!--  
                 <li class="slider">
                     <input type="range" name="tres" id="tres" min=0 max=1 step="0.001">
                 </li>
@@ -33,8 +34,13 @@
                 </li>
                 <li class="slider">
                     <input type="range" name="sete" id="sete" min=0 max=1 step="0.001">
-                </li>
+                </li> -->
             </ul>
+
+            <div class="buttons">
+                    <input type="checkbox" classe='um' name="liga-um" id="liga-um">
+                    <input type="checkbox" classe='dois' name="liga-dois" id="liga-dois">
+            </div>
         </div>
     </main>
 
@@ -44,12 +50,25 @@
     <script>
         $(function(){
 
-            var valoresDial = function(slider){
-                console.log($(slider).children('input[type=range]').val());
+
+            var ctx = new AudioContext();
+
+            var vol = ctx.createGain();
+            vol.connect(ctx.destination);
+            vol.gain.value = 0.001;
+
+            var osc = ctx.createOscillator();
+            osc.type = 'square';
+            osc.connect(vol);
+            osc.start();
+
+            var valoresDial = function(slider, volume){
+                volume.gain.value = $(slider).children('input[type=range]').val();
+                console.log($(slider).children('input[type=range]').val());                
             }
 
             $('li.slider').on('input', function(){
-                valoresDial(this);
+                valoresDial(this, vol);
             });
     
         });        

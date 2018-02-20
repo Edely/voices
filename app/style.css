@@ -1,12 +1,31 @@
 ul.sliders{
     list-style: none;
+    transform: rotate(-90deg) translate(-70px, 0);
+    width: 40px;
+    height: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+    float: left;
+    clear: both;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
 }
 
 li.slider input[type=range]{
-    transform: rotate(90deg) translate(70px, 0);
+   /*  transform: rotate(-90deg) translate(-70px, 0); */
+   top: 0;
+   margin: 0;
+   float: right;
 }
 
 li.slider {
     width: 40px;
     float: left;
+}
+
+.buttons{
+    float:left;
 }
